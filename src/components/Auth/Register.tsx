@@ -1,7 +1,12 @@
 import TextInput from "../commons/TextInput";
 import AuthFormWrapper from "./AuthFormWrapper";
 
-const Register = () => {
+interface Props {
+  handleFormSwitch?: () => void;
+  onCloseModal?: () => void;
+}
+
+const Register = ({ handleFormSwitch, onCloseModal }: Props) => {
   return (
     <AuthFormWrapper
       title="SIGN UP"
@@ -9,6 +14,11 @@ const Register = () => {
       linkText="Login"
       linkHref="/login"
       linkDescription="Already have an account?"
+      subTitle="Create an account to continue"
+      onSubmit={() => {}}
+      onButtonClick={() => alert("Signing Up..")}
+      handleFormSwitch={handleFormSwitch}
+      onCloseModal={onCloseModal}
     >
       <>
         <TextInput label="Email" type="email" placeholder="Enter your email" />

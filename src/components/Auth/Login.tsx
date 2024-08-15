@@ -1,8 +1,12 @@
 import AuthFormWrapper from "./AuthFormWrapper";
 import TextInput from "../commons/TextInput";
-import { Link } from "react-router-dom";
 
-const Login = () => {
+interface Props {
+  handleFormSwitch?: () => void;
+  onCloseModal?: () => void;
+}
+
+const Login = ({ handleFormSwitch, onCloseModal }: Props) => {
   return (
     <AuthFormWrapper
       title="WELCOME BACK"
@@ -10,6 +14,11 @@ const Login = () => {
       linkText="Register"
       linkHref="/register"
       linkDescription="Not registered yet?"
+      subTitle="Log into your account"
+      onSubmit={() => {}}
+      onButtonClick={() => alert("Signing in..")}
+      handleFormSwitch={handleFormSwitch}
+      onCloseModal={onCloseModal}
     >
       <>
         <TextInput
@@ -27,12 +36,8 @@ const Login = () => {
           onChange={(value) => {
             console.log(value);
           }}
+          isLogin
         />
-        <div className="text-right mt-1">
-          <Link to="#" className="text-sm text-blue-500">
-            Forgot password?
-          </Link>
-        </div>
       </>
     </AuthFormWrapper>
   );

@@ -1,41 +1,75 @@
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Button from "../commons/Button";
 
 interface Props {
   title: string;
+  subTitle: string;
   children: JSX.Element;
   buttonText: string;
   linkText: string;
   linkHref: string;
   linkDescription: string;
+  onSubmit: () => void;
+  onButtonClick: () => void;
+  handleFormSwitch?: () => void;
+  onCloseModal?: () => void;
 }
 
 const AuthFormWrapper = ({
   title,
+  subTitle,
   children,
   buttonText,
   linkText,
   linkHref,
   linkDescription,
+  onSubmit,
+  onButtonClick,
+  handleFormSwitch,
+  onCloseModal,
 }: Props) => {
+  const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-900">
-      <div className="bg-gray-800 text-white rounded-lg p-8 shadow-md w-96">
-        <div className="text-center mb-6">
-          <span className="text-gray-500">{title}</span>
-        </div>
-        <form action="/">
-          {children}
+    <div className="relative p-[1px] rounded-lg bg-gradient-to-br from-[#969696] to-[#343434] min-w-[463px] shadow-md">
+      <div className="bg-[#27292D] text-white rounded-lg px-6 py-10">
+        {onCloseModal ? (
           <button
-            type="submit"
-            className="w-full py-2 bg-blue-600 hover:bg-blue-700 text-white rounded mt-4"
+            onClick={onCloseModal}
+            className="absolute top-4 right-4 text-white focus:outline-none bg-[#131319] w-8 h-8 rounded-full"
           >
-            {buttonText}
+            <span className="text-xl leading-4 font-light text-center">
+              &times;
+            </span>
           </button>
+        ) : null}
+
+        <div className="text-center mb-10">
+          <p className="text-gray-500 text-[14px]">{title}</p>
+          <p className="text-[18px] font-semibold mt-1">{subTitle}</p>
+        </div>
+        <form action="/" onSubmit={onSubmit}>
+          {children}
+          <div className="mx-[1.5px]">
+            <Button type="submit" text={buttonText} onClick={onButtonClick} />
+          </div>
         </form>
-        <div className="text-center mt-4">
-          <Link to={linkHref} className="text-sm text-gray-400">
-            {linkDescription} <span className="text-blue-500">{linkText}</span>
-          </Link>
+        <div className="mt-2">
+          <button
+            className="text-sm text-[#7F8084]"
+            onClick={() => {
+              if (handleFormSwitch) {
+                handleFormSwitch();
+              } else {
+                navigate(linkHref);
+              }
+            }}
+          >
+            {linkDescription}{" "}
+            <span className="text-[#C5C7CA] hover:text-blue-500">
+              {linkText} &rarr;
+            </span>
+          </button>
         </div>
       </div>
     </div>
