@@ -7,10 +7,9 @@ interface Props {
 }
 
 const CreatePost = ({ handleOpenModal }: Props) => {
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-
-    alert("creating post...");
+  const handleSubmit = () => {
+    // create post logic goes here.. currently we're just opening the modal
+    handleOpenModal();
   };
 
   return (
@@ -33,7 +32,7 @@ const CreatePost = ({ handleOpenModal }: Props) => {
             <div className="flex justify-end">
               <Button
                 type="submit"
-                onClick={handleOpenModal}
+                onClick={handleSubmit}
                 text={"Post"}
                 className={"max-w-[111px]"}
               />

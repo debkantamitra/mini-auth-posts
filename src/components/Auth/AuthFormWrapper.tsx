@@ -31,7 +31,7 @@ const AuthFormWrapper = ({
   const navigate = useNavigate();
 
   return (
-    <div className="relative p-[1px] rounded-lg bg-gradient-to-br from-[#969696] to-[#343434] min-w-[463px] shadow-md">
+    <div className="relative p-[2px] rounded-lg bg-gradient-to-br from-[#969696] to-[#343434] min-w-[463px] shadow-md">
       <div className="bg-[#27292D] text-white rounded-lg px-6 py-10">
         {onCloseModal ? (
           <button
