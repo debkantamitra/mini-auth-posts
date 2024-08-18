@@ -1,5 +1,6 @@
-import React from "react";
-import UserPost, { Post, ReactionEnum } from "./UserPost";
+import UserPost from "components/Feed/UserPosts/UserPost";
+import { Post } from "interfaces";
+import { ReactionEnum } from "utils";
 
 const index = () => {
   return (

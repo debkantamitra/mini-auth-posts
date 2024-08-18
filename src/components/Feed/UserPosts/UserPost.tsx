@@ -1,35 +1,11 @@
-import ThreeDotsButton from "../../commons/ThreeDotsButton";
-import PostLayout from "../PostLayout";
-
-export type Reaction = ReactionEnum.SAD | ReactionEnum.WAVED;
-
-export enum ReactionEnum {
-  SAD = "SAD",
-  WAVED = "WAVED",
-}
-
-export interface Post {
-  id: string;
-  username: string;
-  timeAgo: string;
-  content: string;
-  commentsCount: number;
-  edited?: boolean;
-  reaction: Reaction;
-  userAvatar: string;
-}
+import { Post } from "interfaces";
+import ThreeDotsButton from "components/commons/ThreeDotsButton";
+import PostLayout from "components/Feed/PostLayout";
+import { getReactionIcon } from "utils";
 
 interface Props {
   post: Post;
 }
-
-const getReactionIcon = (reaction: Reaction) => {
-  if (reaction === ReactionEnum.SAD) {
-    return "😞";
-  } else if (reaction === ReactionEnum.WAVED) {
-    return "👋";
-  }
-};
 
 const UserPost = ({ post }: Props) => {
   return (

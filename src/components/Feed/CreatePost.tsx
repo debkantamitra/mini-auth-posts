@@ -1,16 +1,16 @@
 import React, { useState } from "react";
-import PostLayout from "./PostLayout";
-import Button from "../commons/Button";
+import PostLayout from "components/Feed/PostLayout";
+import Button from "components/commons/Button";
 
 interface Props {
   handleOpenModal: () => void;
 }
 
 const CreatePost = ({ handleOpenModal }: Props) => {
-  const [content, setContent] = useState("");
-
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+
+    alert("creating post...");
   };
 
   return (

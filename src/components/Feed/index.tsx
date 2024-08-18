@@ -1,11 +1,11 @@
-import Layout from "../commons/Layout";
-import CreatePost from "./CreatePost";
-import UserPosts from "./UserPosts";
-import Header from "./Header";
 import { useState } from "react";
-import Modal from "../commons/Modal";
-import Login from "../Auth/Login";
-import Register from "../Auth/Register";
+import Layout from "components/commons/Layout";
+import CreatePost from "components/Feed/CreatePost";
+import UserPosts from "components/Feed/UserPosts";
+import Header from "components/Feed/Header";
+import Modal from "components/commons/Modal";
+import Login from "components/Auth/Login";
+import Register from "components/Auth/Register";
 
 const Home = () => {
   const [isModalOpen, setModalOpen] = useState(false);
@@ -30,7 +30,7 @@ const Home = () => {
         <UserPosts />
 
         {isModalOpen && (
-          <Modal onClose={handleCloseModal}>
+          <Modal>
             {isLoginModal ? (
               <Login
                 handleFormSwitch={() => setIsLoginModal(false)}
