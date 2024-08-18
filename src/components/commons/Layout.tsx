@@ -6,9 +6,9 @@ interface Props {
 
 const Layout = ({ children }: Props) => {
   return (
-    <div className="h-screen bg-black text-white p-6 overflow-scroll">
+    <div className="h-screen bg-[#131319] text-white p-6 overflow-scroll">
       <Navbar />
-      <div className="max-w-2xl mx-auto">{children}</div>
+      <div className="max-w-[700px] mx-auto">{children}</div>
     </div>
   );
 };

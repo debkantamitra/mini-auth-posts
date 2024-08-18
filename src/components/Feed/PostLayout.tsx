@@ -4,7 +4,7 @@ interface Props {
 
 const PostLayout = ({ children }: Props) => {
   return (
-    <div className="bg-[#27292D] p-4 rounded-lg mb-3 border-2 border-[#35373B]">
+    <div className="bg-[#27292D] p-5 rounded-lg mb-3 border-2 border-[#35373B]">
       {children}
     </div>
   );

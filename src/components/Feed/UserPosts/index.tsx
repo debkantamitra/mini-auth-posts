@@ -1,5 +1,5 @@
 import React from "react";
-import UserPost, { Post } from "./UserPost";
+import UserPost, { Post, ReactionEnum } from "./UserPost";
 
 const index = () => {
   return (
@@ -17,54 +17,53 @@ const posts: Post[] = [
   {
     id: "1",
     username: "Theresa Webb",
-    timeAgo: "5 mins ago",
+    timeAgo: "5mins ago",
     content:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     commentsCount: 24,
+    reaction: ReactionEnum.WAVED,
+    userAvatar: "/assets/icons/girl_user.svg",
   },
   {
     id: "2",
     username: "Marvin McKinney",
-    timeAgo: "8 mins ago",
+    timeAgo: "8mins ago",
     content:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     commentsCount: 14,
     edited: true,
+    reaction: ReactionEnum.WAVED,
+    userAvatar: "/assets/icons/boy_user.svg",
   },
   {
     id: "3",
-    username: "Marvin McKinney",
-    timeAgo: "8 mins ago",
+    username: "Theresa Webb",
+    timeAgo: "5mins ago",
     content:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    commentsCount: 14,
-    edited: true,
+    commentsCount: 24,
+    reaction: ReactionEnum.WAVED,
+    userAvatar: "/assets/icons/girl_user.svg",
   },
   {
     id: "4",
     username: "Marvin McKinney",
-    timeAgo: "8 mins ago",
+    timeAgo: "8mins ago",
     content:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
     commentsCount: 14,
     edited: true,
+    reaction: ReactionEnum.WAVED,
+    userAvatar: "/assets/icons/boy_user.svg",
   },
   {
-    id: "5",
-    username: "Marvin McKinney",
-    timeAgo: "8 mins ago",
+    id: "3",
+    username: "Theresa Webb",
+    timeAgo: "5mins ago",
     content:
       "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    commentsCount: 14,
-    edited: true,
-  },
-  {
-    id: "6",
-    username: "Marvin McKinney",
-    timeAgo: "8 mins ago",
-    content:
-      "Amet minim mollit non deserunt ullamco est sit aliqua dolor do amet sint. Velit officia consequat duis enim velit mollit. Exercitation veniam consequat sunt nostrud amet.",
-    commentsCount: 14,
-    edited: true,
+    commentsCount: 24,
+    reaction: ReactionEnum.WAVED,
+    userAvatar: "/assets/icons/girl_user.svg",
   },
 ];

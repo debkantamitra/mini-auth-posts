@@ -16,16 +16,20 @@ const CreatePost = ({ handleOpenModal }: Props) => {
   return (
     <PostLayout>
       <>
-        <h3 className="text-white mb-4">Create post</h3>
+        <h3 className="text-[#C5C7CA] mb-3">Create post</h3>
         <form onSubmit={handleSubmit}>
           <div className="flex flex-col">
-            <textarea
-              className="w-full p-2 mb-4 bg-[#191920] rounded-lg text-gray-300"
-              rows={4}
-              placeholder="How are you feeling today?"
-              value={content}
-              onChange={(e) => setContent(e.target.value)}
-            ></textarea>
+            <div className="flex items-center bg-[#191920] p-4 rounded-lg w-full mb-4">
+              <div className="flex-shrink-0 bg-[#27292D] rounded-full w-[48px] h-[48px] flex items-center justify-center text-[18px] leading-none">
+                💬
+              </div>
+
+              <input
+                type="text"
+                placeholder="How are you feeling today?"
+                className="bg-transparent border-none text-white ml-4 w-full focus:outline-none placeholder:text-[#7F8084]"
+              />
+            </div>
             <div className="flex justify-end">
               <Button
                 type="submit"

@@ -54,9 +54,9 @@ const AuthFormWrapper = ({
             <Button type="submit" text={buttonText} onClick={onButtonClick} />
           </div>
         </form>
-        <div className="mt-2">
+        <div className="text-sm text-[#7F8084] mt-[10px]">
+          {linkDescription}{" "}
           <button
-            className="text-sm text-[#7F8084]"
             onClick={() => {
               if (handleFormSwitch) {
                 handleFormSwitch();
@@ -65,7 +65,6 @@ const AuthFormWrapper = ({
               }
             }}
           >
-            {linkDescription}{" "}
             <span className="text-[#C5C7CA] hover:text-blue-500">
               {linkText} &rarr;
             </span>

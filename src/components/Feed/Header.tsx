@@ -10,8 +10,8 @@ interface Props {
 const Header = ({
   title,
   paragraph,
-  titleClassName = "text-3xl mb-6",
-  paragraphClassName = "mb-6",
+  titleClassName = "text-[#C5C7CA] text-[28px] mb-2 font-medium",
+  paragraphClassName = "text-[#7F8084] mb-10 w-10/12",
 }: Props) => {
   return (
     <div>

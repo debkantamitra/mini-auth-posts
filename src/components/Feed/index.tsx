@@ -24,7 +24,7 @@ const Home = () => {
       <>
         <Header
           title="Hello Jane"
-          paragraph="How are you doing today? Would you like to share something with the community 🧑‍🤝‍🧑"
+          paragraph="How are you doing today? Would you like to share something with the community 🤗"
         />
         <CreatePost handleOpenModal={handleOpenModal} />
         <UserPosts />
